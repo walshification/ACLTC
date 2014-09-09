@@ -1,7 +1,6 @@
 # Star Wars Pop Quiz
 
 puts "Welcome to the Pop Quiz Program! I hope you've watched Star Wars recently."
-
 correct = 0
 
 puts "Question the First: What is the color of Obi-Wan Kenobi's lightsaber?"

@@ -1,5 +1,5 @@
-3.5							# class is Float
-String.new			# class is String
-(1..9)					# class is Range
-String					# class is Class
-"hello".class		# class is Class
+3.5					#=> Float
+String.new			#=> String
+(1..9)				#=> Range
+String				#=> Class
+"hello".class		#=> Class

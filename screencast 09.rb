@@ -1,4 +1,5 @@
 # A word-chooser program.
+
 puts "Welcome to the Word Chooser! Please enter four words, one at a time."
 
 words = []

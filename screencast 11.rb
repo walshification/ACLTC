@@ -1,5 +1,5 @@
-# Everyone likes to be greeted.
-puts "Welcome to the Alphabetizer!"
+# A Program that returns a list of words with different states of caps.
+
 # Ask for what we want
 puts "Please enter 6 words, one at a time."
 
