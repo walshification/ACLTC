@@ -11,10 +11,8 @@ ending = gets.chomp
 end_year = ending.to_i
 
 while start_year <= end_year
-	if (start_year % 4 == 0) && (start_year % 400 == 0)
-		leaps << start_year.to_s
-		start_year += 1
-	elsif (start_year % 4 == 0) && (start_year % 100 != 0)
+	if	(start_year % 4 == 0) && (start_year % 400 == 0) ||
+			(start_year % 4 == 0) && (start_year % 100 != 0)
 		leaps << start_year.to_s
 		start_year += 1
 	else
