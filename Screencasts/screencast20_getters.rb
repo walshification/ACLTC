@@ -1,6 +1,16 @@
-# Person
+# Getters
 
 class Person
+
+	attr_reader :name, :age, :occupation, :mood
+
+	def initialize
+			@name = "Jeffrey"
+			@age = 18
+			@occupation = "janitor"
+			@mood = "testy"
+	end
+
 	def call(name)
 		@name = name
 	end
@@ -17,18 +27,6 @@ class Person
 		@mood = emotion
 	end
 	
-	def age
-		@age
-	end
-	
-	def occupation
-		@occupation
-	end
-	
-	def mood
-		@mood
-	end
-	
 	def status
 		puts "#{@name}'s current status is:"
 		puts "#{@age} years old."
@@ -38,10 +36,8 @@ class Person
 
 end
 
-Chris = Person.new
-Chris.call("Chris")
-Chris.measure(31)
-Chris.employ("future software engineer")
-Chris.observe("curious")
-
-Chris.status
+Jeffrey = Person.new
+puts Jeffrey.name
+puts Jeffrey.age
+puts Jeffrey.occupation
+puts Jeffrey.mood

@@ -10,63 +10,44 @@ game_board =	[
 	["-", "-", "-", "-", "-", "-"]
 ]
 
-def state board
+play = true
+
+def state(board)
 	board.each do |space|
 		puts space.join(" ")
 	end
 end
 
-def turn prompt
+def turn(board, prompt)
+	
+	state(board)
 	puts prompt
-	return gets.chomp.to_i - 1
-end
-
-def gravity n, x, y
-	if n[y][x] == "X"
-		return "That column is full."
+	x = gets.chomp.to_i - 1
+	y = 6	
+	
+	until board[y][x] != "X" || y < 0
+		y -= 1
 	end
-	if n[y+1][x] == "X"
-		n[y].delete_at(x)
-		n[y].insert(x, "X")
-		return "Good move!"
-	elsif n[y+2][x] == "X"
-		n[y].delete_at(x)
-		n[y].insert(x, "X")
-		return "Good move!"
-	elsif n[y+3][x] == "X"
-		n[y].delete_at(x)
-		n[y].insert(x, "X")
-		return "Good move!"
-	elsif n[y+4][x] == "X"
-		n[y].delete_at(x)
-		n[y].insert(x, "X")
-		return "Good move!"
-	elsif n[y+5][x] == "X"
-		n[y].delete_at(x)
-		n[y].insert(x, "X")
-		return "Good move!"
-	elsif n[y+6][x] == "X"
-		n[y].delete_at(x)
-		n[y].insert(x, "X")
-		return "Good move!"
+	
+	if y < 0
+		return turn(board, "Try again. Choose a different column 1-7.")
+	else
+		board[y].delete_at(x)
+		board[y].insert(x, "X")
+		puts "Good move!"
 	end
 	
 end
 
-play = true
-
 while play == true
 	puts	"Would you like to play a game? Type \"board\" to see the game board " +
-			"or \"exit\" to exit."
+				"or \"exit\" to exit."
 	new_game = gets.chomp.downcase
 	if new_game == "board"
-		game_board.each do |space|
-			puts space.join(" ")
+		win = false
+		until win == true
+			result = turn(game_board, "Choose a column 1-7 to put a piece in.")
 		end
-		x = turn("Choose a column 1-7 to put a piece in.")
-		gravity(game_board, x, 0)
-		state(game_board)
-		
 	elsif new_game == "exit"
 		play = false
 	else
