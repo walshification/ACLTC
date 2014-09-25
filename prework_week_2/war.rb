@@ -46,16 +46,10 @@ def p2_wins(p1_deck, p2_deck)
 end
 
 def p1_wins_one_war(p1_deck, p2_deck)
-	p1_deck << p1_deck.shift
-	p1_deck << p2_deck.shift
-	p1_deck << p1_deck.shift
-	p1_deck << p2_deck.shift
-	p1_deck << p1_deck.shift
-	p1_deck << p2_deck.shift
-	p1_deck << p1_deck.shift
-	p1_deck << p2_deck.shift
-	p1_deck << p1_deck.shift
-	p1_deck << p2_deck.shift
+	5.times do |p1_deck, p2_deck|
+		p1_deck << p1_deck.shift
+		p1_deck << p2_deck.shift
+	end
 end
 
 def p2_wins_one_war(p1_deck, p2_deck)

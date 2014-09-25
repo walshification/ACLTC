@@ -3,10 +3,10 @@
 class Person
 
 	def initialize
-			@name = "Jeffrey"
-			@age = 18
-			@occupation = "janitor"
-			@mood = "testy"
+		@name = "Jeffrey"
+		@age = 18
+		@occupation = "janitor"
+		@mood = "testy"
 	end
 
 	def call(name)
